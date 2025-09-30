@@ -92,8 +92,6 @@ public class Main {
         } else {
             System.out.println("Неверный выбор. Игра окончена.");
         }
-
-        sc.close();
     }
 }
 
