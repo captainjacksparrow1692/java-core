@@ -1,5 +1,7 @@
 package lesson03;
 
+import java.util.Scanner;
+
 public class BankAccount {
     private String fio;
     private double accountNumber;
@@ -34,10 +36,45 @@ public class BankAccount {
     public double getBalance() {
         return balance;
     }
+
+    // ---------- MAIN ----------
     public static void main(String[] args) {
-        BankAccount account = new BankAccount("Jack Sparrow", 123456789, 1000000);
+        Scanner sc = new Scanner(System.in);
 
-        System.out.println("Начальный баланс " + account.getBalance());
+        BankAccount account = new BankAccount("Jack Sparrow", 123465789, 1000000);
 
+        int choice;
+        do {
+            System.out.println("\n=== Bank Account Menu ===");
+            System.out.println("1. Пополнение");
+            System.out.println("2. Снятие наличных");
+            System.out.println("3. Баланс");
+            System.out.println("0. Выход");
+            System.out.print("Ваш выбор: ");
+            choice = sc.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Введите сумму пополнения: ");
+                    double depositAmount = sc.nextDouble();
+                    account.deposit(depositAmount);
+                    break;
+                case 2:
+                    System.out.print("Введите сумму снятия: ");
+                    double withdrawAmount = sc.nextDouble();
+                    account.withdraw(withdrawAmount);
+                    break;
+                case 3:
+                    System.out.println("Баланс: " + account.getBalance());
+                    break;
+                case 0:
+                    System.out.println("Выход...");
+                    break;
+                default:
+                    System.out.println("Неправильный ввод!");
+            }
+        } while (choice != 0);
+
+        sc.close();
     }
 }
