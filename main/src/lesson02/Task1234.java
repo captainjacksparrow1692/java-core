@@ -1,7 +1,7 @@
-package task1234;
+package lesson02;
 
 import java.util.Scanner;
-public class Main {
+public class Task1234 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

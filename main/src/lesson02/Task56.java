@@ -1,8 +1,8 @@
-package task56;
+package lesson02;
 
 import java.util.Scanner;
 
-public class Main {
+public class Task56 {
     //5 задание
     public static int sumDigits(int n) {
         n = Math.abs(n);  // чтобы работало и для отрицательных чисел
