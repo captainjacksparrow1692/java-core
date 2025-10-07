@@ -53,7 +53,7 @@ class Student extends Person{
     }
 
     public String getInfo(){
-        return "Student Info: "+ "Name: " + getName() + "ID: " + getId() + " Score: " + score;
+        return "Student Info: "+ "Name: " + getName() + "Student ID: " + getId() + " Score: " + score;
     }
 }
 //Teacher
@@ -69,7 +69,7 @@ class Teacher extends Person{
     }
 
     public String getInfo(){
-        return "Teacher Info: "+ "Name: " + getName() + "ID: " + getId() + "Subject: " + subject;
+        return "Teacher Info: "+ "Name: " + getName() + "Teacher ID: " + getId() + "Subject: " + subject;
     }
 }
 //Cource
