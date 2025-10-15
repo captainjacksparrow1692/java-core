@@ -76,7 +76,7 @@ class Airline {
     private void initializeSeats() {
         //Бизнес-класс
         for (int row = 1; row <= 5; row++) {
-            for (char line : new char[]{'A', 'C', 'D', 'F'}) {
+            for (char line : new char[]{'A', 'B', 'D', 'F'}) {
                 seatList.add(new Seat(row, line, "Бизнес"));
             }
         }
@@ -245,7 +245,7 @@ public class Main {
                 case 0:
                     airline.save();
                     running = false;
-                    System.out.println("Данные сохранены. До свидания!");
+                    System.out.println("Данные сохранены. До свидания!. Хорошего полета!");
                     break;
                 default:
                     System.out.println("Неверный выбор!");
