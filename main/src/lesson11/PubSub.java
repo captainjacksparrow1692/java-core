@@ -61,14 +61,27 @@ public class PubSub {
         Subscriber subscriber = new Subscriber(publisher);
         publisher.subscribe(subscriber);
 
-        Thread subcriberThread = new Thread(subscriber);
-        subcriberThread.start();
+        Thread subscriberThread = new Thread(subscriber);
+        subscriberThread.start();
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("Введите слова (или 'exit' для выхода):");
+
         while (true) {
-
+            String input = sc.nextLine();
+            publisher.publish(input);
+            if (input.equalsIgnoreCase("exit")) {
+                publisher.stop();
+                break;
+            }
         }
-    }
 
+        try {
+            subscriberThread.join();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
+        System.out.println("Программа завершена.");
+    }
 }
