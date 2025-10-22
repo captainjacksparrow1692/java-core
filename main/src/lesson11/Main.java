@@ -52,12 +52,11 @@ class ThreadPool {
     public void shutdown() {
         isRunning = false;
         for (Worker worker : workers) {
-            worker.interrupt(); // прерываем потоки, чтобы они завершились
+            worker.interrupt();
         }
     }
 }
 
-// Тестовый класс
 public class Main {
     public static void main(String[] args) {
         ThreadPool pool = new ThreadPool(4);
